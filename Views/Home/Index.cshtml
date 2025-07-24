@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "YouTube Canlı Chat İzleyici";
+}
+
+<h2>YouTube Canlı Chat İzleyici</h2>
+
+<form asp-action="StartListening" method="post">
+    <div>
+        <label>Canlı Yayın URL</label>
+        <input name="videoUrl" type="url" required placeholder="https://www.youtube.com/watch?v=..." />
+    </div>
+    <div>
+        <label>Anahtar Kelime</label>
+        <input name="keyword" type="text" required />
+    </div>
+    <button type="submit">Dinlemeye Başla</button>
+</form>
+
+<hr />
+
+<table id="results" border="1" style="width:100%; margin-top:20px;">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Kullanıcı</th>
+        <th>Mesaj</th>
+        <th>Zaman</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.0/signalr.min.js"></script>
+    <script>
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/chatHub")
+            .build();
+
+        connection.on("ReceiveMessage", function (msg) {
+            const tableBody = document.querySelector("#results tbody");
+            if (tableBody) {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${msg.order}</td>
+                    <td>${msg.author}</td>
+                    <td>${msg.message}</td>
+                    <td>${msg.time}</td>
+                `;
+                tableBody.appendChild(row);
+            }
+        });
+
+        connection.start().catch(err => console.error(err.toString()));
+    </script>
+}

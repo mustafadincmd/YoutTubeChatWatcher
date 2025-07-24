@@ -1,0 +1,18 @@
+@model List<ChatMatch>
+
+<table>
+    <thead>
+    <tr><th>#</th><th>Kullanıcı</th><th>Mesaj</th><th>Zaman</th></tr>
+    </thead>
+    <tbody>
+    @foreach (var m in Model)
+    {
+        <tr>
+            <td>@m.Order</td>
+            <td>@m.Author</td>
+            <td>@m.Message</td>
+            <td>@m.Time</td>
+        </tr>
+    }
+    </tbody>
+</table>
