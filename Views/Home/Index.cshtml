@@ -6,25 +6,30 @@
 
 <form asp-action="StartListening" method="post">
     <div>
-        <label>Canlı Yayın URL</label>
-        <input name="videoUrl" type="url" required placeholder="https://www.youtube.com/watch?v=..." />
+        <label for="videoUrl">Canlı Yayın URL</label><br />
+        <input id="videoUrl" name="videoUrl" type="url" required placeholder="https://www.youtube.com/watch?v=..." style="width: 400px;" />
     </div>
     <div>
-        <label>Anahtar Kelime</label>
-        <input name="keyword" type="text" required />
+        <label for="keyword">Anahtar Kelime</label><br />
+        <input id="keyword" name="keyword" type="text" required style="width: 200px;" />
     </div>
+    <div>
+        <label for="matchLimit">Kaç Mesajda Ara (Max Eşleşme)</label><br />
+        <input id="matchLimit" name="matchLimit" type="number" min="1" value="5" required style="width: 100px;" />
+    </div>
+    <br />
     <button type="submit">Dinlemeye Başla</button>
 </form>
 
 <hr />
 
-<table id="results" border="1" style="width:100%; margin-top:20px;">
-    <thead>
+<table id="results" border="1" style="width:100%; margin-top:20px; border-collapse: collapse;">
+    <thead style="background-color: #f0f0f0;">
     <tr>
-        <th>#</th>
-        <th>Kullanıcı</th>
-        <th>Mesaj</th>
-        <th>Zaman</th>
+        <th style="padding: 8px;">#</th>
+        <th style="padding: 8px;">Kullanıcı</th>
+        <th style="padding: 8px;">Mesaj</th>
+        <th style="padding: 8px;">Zaman</th>
     </tr>
     </thead>
     <tbody></tbody>

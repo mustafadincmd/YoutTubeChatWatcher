@@ -11,10 +11,17 @@ public class YouTubeChatService
     private readonly IHubContext<ChatHub> _hubContext;
     private readonly string _apiKey = "AIzaSyDkQG5ma71MFn_hFWkuNTeYnOB5wqEHks4";
 
+    private DateTime? _listeningStartTime;
+
     public YouTubeChatService(HttpClient httpClient, IHubContext<ChatHub> hubContext)
     {
         _httpClient = httpClient;
         _hubContext = hubContext;
+    }
+
+    public void SetListeningStartTime(DateTime startTime)
+    {
+        _listeningStartTime = startTime;
     }
 
     public async Task<string?> GetLiveChatIdAsync(string videoId)
@@ -36,62 +43,90 @@ public class YouTubeChatService
         }
     }
 
-    // Burada artık matchLimit yok, sonsuz dinleme için task başlatıyoruz
-    public async Task StartListeningAsync(string liveChatId, string keyword, CancellationToken cancellationToken)
+    public async Task StartListeningAsync(string liveChatId, string keyword, int matchLimit, CancellationToken cancellationToken)
+{
+    string? nextPageToken = null;
+    int order = 0;
+    var seenMessageIds = new HashSet<string>();
+    var seenAuthors = new HashSet<string>(StringComparer.OrdinalIgnoreCase); // Kullanıcı isimlerini tutar, case insensitive
+
+    if (_listeningStartTime == null)
     {
-        string? nextPageToken = null;
-        int order = 0;
+        _listeningStartTime = DateTime.UtcNow; // Başlangıç zamanı yoksa şimdi olarak ayarla
+    }
 
-        while (!cancellationToken.IsCancellationRequested)
+    while (!cancellationToken.IsCancellationRequested)
+    {
+        string url = $"https://www.googleapis.com/youtube/v3/liveChat/messages?liveChatId={liveChatId}&part=snippet,authorDetails&key={_apiKey}";
+
+        if (!string.IsNullOrEmpty(nextPageToken))
+            url += $"&pageToken={nextPageToken}";
+
+        try
         {
-            string url = $"https://www.googleapis.com/youtube/v3/liveChat/messages?liveChatId={liveChatId}&part=snippet,authorDetails&key={_apiKey}";
+            var response = await _httpClient.GetStringAsync(url);
+            var root = JsonDocument.Parse(response).RootElement;
 
-            if (!string.IsNullOrEmpty(nextPageToken))
-                url += $"&pageToken={nextPageToken}";
+            nextPageToken = root.GetProperty("nextPageToken").GetString();
 
-            try
+            foreach (var item in root.GetProperty("items").EnumerateArray())
             {
-                var response = await _httpClient.GetStringAsync(url);
-                var root = JsonDocument.Parse(response).RootElement;
+                string messageId = item.GetProperty("id").GetString();
 
-                nextPageToken = root.GetProperty("nextPageToken").GetString();
+                if (seenMessageIds.Contains(messageId))
+                    continue;
 
-                foreach (var item in root.GetProperty("items").EnumerateArray())
+                seenMessageIds.Add(messageId);
+
+                string author = item.GetProperty("authorDetails").GetProperty("displayName").GetString();
+                string message = item.GetProperty("snippet").GetProperty("displayMessage").GetString();
+                string timestampStr = item.GetProperty("snippet").GetProperty("publishedAt").GetString();
+
+                if (!DateTime.TryParse(timestampStr, out var timestamp))
                 {
-                    string author = item.GetProperty("authorDetails").GetProperty("displayName").GetString();
-                    string message = item.GetProperty("snippet").GetProperty("displayMessage").GetString();
-                    string timestamp = item.GetProperty("snippet").GetProperty("publishedAt").GetString();
-
-                    if (message.Contains(keyword, StringComparison.OrdinalIgnoreCase))
-                    {
-                        order++;
-
-                        var chatMatch = new ChatMatch
-                        {
-                            Order = order,
-                            Author = author,
-                            Message = message,
-                            Time = timestamp
-                        };
-
-                        // SignalR ile frontend'e gönder
-                        await _hubContext.Clients.All.SendAsync("ReceiveMessage", chatMatch);
-                    }
+                    timestamp = DateTime.UtcNow;
                 }
 
-                await Task.Delay(3000, cancellationToken); // 3 saniyede bir yeni mesajları çek
+                if (timestamp < _listeningStartTime)
+                    continue;
+
+                if (message.Contains(keyword, StringComparison.OrdinalIgnoreCase))
+                {
+                    // Aynı yazar mesajı daha önce gösterildiyse atla
+                    if (seenAuthors.Contains(author))
+                        continue;
+
+                    seenAuthors.Add(author);
+
+                    order++;
+
+                    var chatMatch = new ChatMatch
+                    {
+                        Order = order,
+                        Author = author,
+                        Message = message,
+                        Time = timestampStr
+                    };
+
+                    await _hubContext.Clients.All.SendAsync("ReceiveMessage", chatMatch);
+
+                    if (order >= matchLimit)
+                        return;
+                }
             }
-            catch (TaskCanceledException)
-            {
-                // İptal edildi, döngü kırılır
-                break;
-            }
-            catch (Exception ex)
-            {
-                // Hata durumunda log vs yapabilirsin
-                Console.WriteLine($"Hata: {ex.Message}");
-                await Task.Delay(5000, cancellationToken);
-            }
+
+            await Task.Delay(3000, cancellationToken);
+        }
+        catch (TaskCanceledException)
+        {
+            break;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Hata: {ex.Message}");
+            await Task.Delay(5000, cancellationToken);
         }
     }
+}
+
 }

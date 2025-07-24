@@ -20,13 +20,11 @@ public class HomeController : Controller
     {
         return View();
     }
-
-    [HttpPost]
-    public async Task<IActionResult> StartListening(string videoUrl, string keyword)
+    public async Task<IActionResult> StartListening(string videoUrl, string keyword, int matchLimit)
     {
         if (_cts != null)
         {
-            _cts.Cancel(); // varsa eski dinlemeyi durdur
+            _cts.Cancel();
             _cts.Dispose();
         }
 
@@ -40,10 +38,15 @@ public class HomeController : Controller
 
         _cts = new CancellationTokenSource();
 
-        _ = _chatService.StartListeningAsync(liveChatId, keyword ?? string.Empty, _cts.Token);
+        // İşte buraya ekledik:
+        _chatService.SetListeningStartTime(DateTime.UtcNow);
+
+        _ = _chatService.StartListeningAsync(liveChatId, keyword ?? string.Empty, matchLimit, _cts.Token);
 
         return RedirectToAction("Index");
     }
+
+
 
     private string? ExtractVideoId(string url)
     {

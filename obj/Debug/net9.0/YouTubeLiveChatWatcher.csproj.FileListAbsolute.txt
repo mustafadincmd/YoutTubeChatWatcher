@@ -17,7 +17,6 @@
 /Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/YouTubeLiveChatWatcher.MvcApplicationPartsAssemblyInfo.cache
 /Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/YouTubeLiveChatWatcher.RazorAssemblyInfo.cache
 /Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/YouTubeLiveChatWatcher.RazorAssemblyInfo.cs
-/Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/YouTubeLiveChatWatcher.sourcelink.json
 /Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
 /Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/scopedcss/bundle/YouTubeLiveChatWatcher.styles.css
 /Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/scopedcss/projectbundle/YouTubeLiveChatWatcher.bundle.scp.css
