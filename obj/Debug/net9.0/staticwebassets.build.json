@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9vgNw1a8sqHuBfXNMCSQ/okGU2Ja6Zd1Zk8u0Piu0+4=",
+  "Hash": "MbYO/KuXi7+6Pg3+/IOVnFghajDEFu09ytbR2Aa1MD4=",
   "Source": "YouTubeLiveChatWatcher",
   "BasePath": "_content/YouTubeLiveChatWatcher",
   "Mode": "Default",
@@ -101,12 +101,12 @@
       "OriginalItemSpec": "/Users/mustafadinc/Projects/YouTubeLiveChatWatcher/wwwroot/lib/jquery-validation/dist/jquery.validate.js"
     },
     {
-      "Identity": "/Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/compressed/3dwwkjb1p9-b9sayid5wm.gz",
+      "Identity": "/Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/compressed/3dwwkjb1p9-6puewi10ds.gz",
       "SourceId": "YouTubeLiveChatWatcher",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/compressed/",
       "BasePath": "_content/YouTubeLiveChatWatcher",
-      "RelativePath": "css/site#[.{fingerprint=b9sayid5wm}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=6puewi10ds}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -115,8 +115,8 @@
       "RelatedAsset": "/Users/mustafadinc/Projects/YouTubeLiveChatWatcher/wwwroot/css/site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "pw5l7j5n1s",
-      "Integrity": "KbRAtTdCZlkPQMEP8615MCQRMWQsaAwQYpxvPAoetmA=",
+      "Fingerprint": "g9g04caun4",
+      "Integrity": "VKZPOQw5lA0JMPUgtifg1+/k6AChWENbbSNEizvad7I=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/mustafadinc/Projects/YouTubeLiveChatWatcher/wwwroot/css/site.css"
@@ -1417,8 +1417,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "b9sayid5wm",
-      "Integrity": "j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=",
+      "Fingerprint": "6puewi10ds",
+      "Integrity": "6koqhPcVVe46R/N3ZLeM6PWZ0K9+ZE4CPDzxIEfnxQ0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/site.css"
@@ -2728,13 +2728,13 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.b9sayid5wm.css",
-      "AssetFile": "/Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/compressed/3dwwkjb1p9-b9sayid5wm.gz",
+      "Route": "css/site.6puewi10ds.css",
+      "AssetFile": "/Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/compressed/3dwwkjb1p9-6puewi10ds.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.003134796238"
+          "Quality": "0.002512562814"
         }
       ],
       "ResponseHeaders": [
@@ -2744,15 +2744,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "318"
+          "Value": "397"
         },
         {
           "Name": "ETag",
-          "Value": "\"KbRAtTdCZlkPQMEP8615MCQRMWQsaAwQYpxvPAoetmA=\""
+          "Value": "\"VKZPOQw5lA0JMPUgtifg1+/k6AChWENbbSNEizvad7I=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 24 Jul 2025 00:20:29 GMT"
+          "Value": "Thu, 24 Jul 2025 19:03:55 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2772,13 +2772,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\""
+          "Value": "W/\"6koqhPcVVe46R/N3ZLeM6PWZ0K9+ZE4CPDzxIEfnxQ0=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "b9sayid5wm"
+          "Value": "6puewi10ds"
         },
         {
           "Name": "label",
@@ -2786,12 +2786,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="
+          "Value": "sha256-6koqhPcVVe46R/N3ZLeM6PWZ0K9+ZE4CPDzxIEfnxQ0="
         }
       ]
     },
     {
-      "Route": "css/site.b9sayid5wm.css",
+      "Route": "css/site.6puewi10ds.css",
       "AssetFile": "/Users/mustafadinc/Projects/YouTubeLiveChatWatcher/wwwroot/css/site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2801,7 +2801,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "667"
+          "Value": "852"
         },
         {
           "Name": "Content-Type",
@@ -2809,11 +2809,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\""
+          "Value": "\"6koqhPcVVe46R/N3ZLeM6PWZ0K9+ZE4CPDzxIEfnxQ0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 24 Jul 2025 00:20:29 GMT"
+          "Value": "Thu, 24 Jul 2025 19:03:55 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2823,7 +2823,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "b9sayid5wm"
+          "Value": "6puewi10ds"
         },
         {
           "Name": "label",
@@ -2831,13 +2831,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="
+          "Value": "sha256-6koqhPcVVe46R/N3ZLeM6PWZ0K9+ZE4CPDzxIEfnxQ0="
         }
       ]
     },
     {
-      "Route": "css/site.b9sayid5wm.css.gz",
-      "AssetFile": "/Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/compressed/3dwwkjb1p9-b9sayid5wm.gz",
+      "Route": "css/site.6puewi10ds.css.gz",
+      "AssetFile": "/Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/compressed/3dwwkjb1p9-6puewi10ds.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2846,7 +2846,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "318"
+          "Value": "397"
         },
         {
           "Name": "Content-Type",
@@ -2854,11 +2854,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"KbRAtTdCZlkPQMEP8615MCQRMWQsaAwQYpxvPAoetmA=\""
+          "Value": "\"VKZPOQw5lA0JMPUgtifg1+/k6AChWENbbSNEizvad7I=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 24 Jul 2025 00:20:29 GMT"
+          "Value": "Thu, 24 Jul 2025 19:03:55 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2876,7 +2876,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "b9sayid5wm"
+          "Value": "6puewi10ds"
         },
         {
           "Name": "label",
@@ -2884,18 +2884,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-KbRAtTdCZlkPQMEP8615MCQRMWQsaAwQYpxvPAoetmA="
+          "Value": "sha256-VKZPOQw5lA0JMPUgtifg1+/k6AChWENbbSNEizvad7I="
         }
       ]
     },
     {
       "Route": "css/site.css",
-      "AssetFile": "/Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/compressed/3dwwkjb1p9-b9sayid5wm.gz",
+      "AssetFile": "/Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/compressed/3dwwkjb1p9-6puewi10ds.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.003134796238"
+          "Quality": "0.002512562814"
         }
       ],
       "ResponseHeaders": [
@@ -2905,15 +2905,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "318"
+          "Value": "397"
         },
         {
           "Name": "ETag",
-          "Value": "\"KbRAtTdCZlkPQMEP8615MCQRMWQsaAwQYpxvPAoetmA=\""
+          "Value": "\"VKZPOQw5lA0JMPUgtifg1+/k6AChWENbbSNEizvad7I=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 24 Jul 2025 00:20:29 GMT"
+          "Value": "Thu, 24 Jul 2025 19:03:55 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2933,13 +2933,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\""
+          "Value": "W/\"6koqhPcVVe46R/N3ZLeM6PWZ0K9+ZE4CPDzxIEfnxQ0=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="
+          "Value": "sha256-6koqhPcVVe46R/N3ZLeM6PWZ0K9+ZE4CPDzxIEfnxQ0="
         }
       ]
     },
@@ -2954,7 +2954,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "667"
+          "Value": "852"
         },
         {
           "Name": "Content-Type",
@@ -2962,11 +2962,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\""
+          "Value": "\"6koqhPcVVe46R/N3ZLeM6PWZ0K9+ZE4CPDzxIEfnxQ0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 24 Jul 2025 00:20:29 GMT"
+          "Value": "Thu, 24 Jul 2025 19:03:55 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2976,13 +2976,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="
+          "Value": "sha256-6koqhPcVVe46R/N3ZLeM6PWZ0K9+ZE4CPDzxIEfnxQ0="
         }
       ]
     },
     {
       "Route": "css/site.css.gz",
-      "AssetFile": "/Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/compressed/3dwwkjb1p9-b9sayid5wm.gz",
+      "AssetFile": "/Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/compressed/3dwwkjb1p9-6puewi10ds.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2991,7 +2991,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "318"
+          "Value": "397"
         },
         {
           "Name": "Content-Type",
@@ -2999,11 +2999,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"KbRAtTdCZlkPQMEP8615MCQRMWQsaAwQYpxvPAoetmA=\""
+          "Value": "\"VKZPOQw5lA0JMPUgtifg1+/k6AChWENbbSNEizvad7I=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 24 Jul 2025 00:20:29 GMT"
+          "Value": "Thu, 24 Jul 2025 19:03:55 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3021,7 +3021,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-KbRAtTdCZlkPQMEP8615MCQRMWQsaAwQYpxvPAoetmA="
+          "Value": "sha256-VKZPOQw5lA0JMPUgtifg1+/k6AChWENbbSNEizvad7I="
         }
       ]
     },

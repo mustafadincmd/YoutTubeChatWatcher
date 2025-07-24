@@ -2,38 +2,56 @@
     ViewData["Title"] = "YouTube Canlı Chat İzleyici";
 }
 
-<h2>YouTube Canlı Chat İzleyici</h2>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<form asp-action="StartListening" method="post">
-    <div>
-        <label for="videoUrl">Canlı Yayın URL</label><br />
-        <input id="videoUrl" name="videoUrl" type="url" required placeholder="https://www.youtube.com/watch?v=..." style="width: 400px;" />
-    </div>
-    <div>
-        <label for="keyword">Anahtar Kelime</label><br />
-        <input id="keyword" name="keyword" type="text" required style="width: 200px;" />
-    </div>
-    <div>
-        <label for="matchLimit">Kaç Mesajda Ara (Max Eşleşme)</label><br />
-        <input id="matchLimit" name="matchLimit" type="number" min="1" value="5" required style="width: 100px;" />
-    </div>
-    <br />
-    <button type="submit">Dinlemeye Başla</button>
-</form>
+<div class="container my-5">
+    <div class="card shadow-lg">
+        <div class="card-body">
+            <h2 class="card-title text-primary mb-4">🎥 YouTube Canlı Chat İzleyici</h2>
 
-<hr />
+            <form asp-action="StartListening" method="post" class="row g-3">
+                <div class="col-md-6">
+                    <label for="videoUrl" class="form-label">Canlı Yayın URL</label>
+                    <input id="videoUrl" name="videoUrl" type="url" class="form-control" placeholder="https://www.youtube.com/watch?v=..." required>
+                </div>
+                <div class="col-md-4">
+                    <label for="keyword" class="form-label">Anahtar Kelime</label>
+                    <input id="keyword" name="keyword" type="text" class="form-control" required>
+                </div>
+                <div class="col-md-2">
+                    <label for="matchLimit" class="form-label">Max Eşleşme</label>
+                    <input id="matchLimit" name="matchLimit" type="number" min="1" value="5" class="form-control" required>
+                </div>
 
-<table id="results" border="1" style="width:100%; margin-top:20px; border-collapse: collapse;">
-    <thead style="background-color: #f0f0f0;">
-    <tr>
-        <th style="padding: 8px;">#</th>
-        <th style="padding: 8px;">Kullanıcı</th>
-        <th style="padding: 8px;">Mesaj</th>
-        <th style="padding: 8px;">Zaman</th>
-    </tr>
-    </thead>
-    <tbody></tbody>
-</table>
+                <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+                    <button type="submit" class="btn btn-success px-4">🚀 Dinlemeye Başla</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="d-flex justify-content-end mt-3">
+        <button id="printBtn" class="btn btn-outline-secondary">
+            🖨️ Yazdır
+        </button>
+    </div>
+
+    <hr class="my-5" />
+
+    <div class="table-responsive">
+        <table id="results" class="table table-bordered table-striped align-middle">
+            <thead class="table-light">
+            <tr>
+                <th>#</th>
+                <th>Kullanıcı</th>
+                <th>Mesaj</th>
+                <th>Zaman</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
 
 @section Scripts {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.0/signalr.min.js"></script>
@@ -59,3 +77,30 @@
         connection.start().catch(err => console.error(err.toString()));
     </script>
 }
+<script>
+    document.getElementById("printBtn").addEventListener("click", function () {
+        const printContents = document.getElementById("results").outerHTML;
+        const win = window.open('', '', 'width=900,height=650');
+        win.document.write(`
+            <html>
+                <head>
+                    <title>Canlı Mesaj Yazdır</title>
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+                    <style>
+                        body { padding: 20px; }
+                        table { font-size: 14px; }
+                        h2 { margin-bottom: 20px; }
+                    </style>
+                </head>
+                <body>
+                    <h2>YouTube Canlı Chat Sonuçları</h2>
+                    ${printContents}
+                </body>
+            </html>
+        `);
+        win.document.close();
+        win.focus();
+        win.print();
+        win.close();
+    });
+</script>

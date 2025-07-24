@@ -20,7 +20,6 @@
 /Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
 /Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/scopedcss/bundle/YouTubeLiveChatWatcher.styles.css
 /Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/scopedcss/projectbundle/YouTubeLiveChatWatcher.bundle.scp.css
-/Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/compressed/3dwwkjb1p9-b9sayid5wm.gz
 /Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/compressed/ey9ovhiy3d-61n19gt1b8.gz
 /Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/compressed/cmwobhosj7-xtxxf3hu2r.gz
 /Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/compressed/3t89l9wj31-bqjiyaj88i.gz
@@ -99,3 +98,4 @@
 /Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/YouTubeLiveChatWatcher.pdb
 /Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/YouTubeLiveChatWatcher.genruntimeconfig.cache
 /Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/ref/YouTubeLiveChatWatcher.dll
+/Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/compressed/3dwwkjb1p9-6puewi10ds.gz
