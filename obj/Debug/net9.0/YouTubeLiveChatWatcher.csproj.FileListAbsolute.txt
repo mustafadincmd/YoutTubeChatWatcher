@@ -99,3 +99,4 @@
 /Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/YouTubeLiveChatWatcher.genruntimeconfig.cache
 /Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/ref/YouTubeLiveChatWatcher.dll
 /Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/compressed/3dwwkjb1p9-6puewi10ds.gz
+/Users/mustafadinc/Projects/YouTubeLiveChatWatcher/obj/Debug/net9.0/YouTubeLiveChatWatcher.sourcelink.json
