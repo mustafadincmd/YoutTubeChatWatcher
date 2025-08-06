@@ -9,7 +9,7 @@ public class YouTubeChatService
 {
     private readonly HttpClient _httpClient;
     private readonly IHubContext<ChatHub> _hubContext;
-    private readonly string _apiKey = "AIzaSyDkQG5ma71MFn_hFWkuNTeYnOB5wqEHks4";
+    private readonly string _apiKey = ""; //  YouTube Data API key here
 
     private DateTime? _listeningStartTime;
 
@@ -48,11 +48,11 @@ public class YouTubeChatService
     string? nextPageToken = null;
     int order = 0;
     var seenMessageIds = new HashSet<string>();
-    var seenAuthors = new HashSet<string>(StringComparer.OrdinalIgnoreCase); // Kullanıcı isimlerini tutar, case insensitive
+    var seenAuthors = new HashSet<string>(StringComparer.OrdinalIgnoreCase); //
 
     if (_listeningStartTime == null)
     {
-        _listeningStartTime = DateTime.UtcNow; // Başlangıç zamanı yoksa şimdi olarak ayarla
+        _listeningStartTime = DateTime.UtcNow;
     }
 
     while (!cancellationToken.IsCancellationRequested)
@@ -92,7 +92,6 @@ public class YouTubeChatService
 
                 if (message.Contains(keyword, StringComparison.OrdinalIgnoreCase))
                 {
-                    // Aynı yazar mesajı daha önce gösterildiyse atla
                     if (seenAuthors.Contains(author))
                         continue;
 

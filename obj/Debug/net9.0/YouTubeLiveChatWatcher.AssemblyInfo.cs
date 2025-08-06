@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("YouTubeLiveChatWatcher")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+728ef3a2c9ac7e640c6ac145b60aa26a45f07a4f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a80037064adffec64f831c49abe58dd66e45d965")]
 [assembly: System.Reflection.AssemblyProductAttribute("YouTubeLiveChatWatcher")]
 [assembly: System.Reflection.AssemblyTitleAttribute("YouTubeLiveChatWatcher")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
